@@ -4,16 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instagram</title>
+    <style>
+        img{
+            height: 100px;
+            width: 100px;
+        }
+    </style>
 </head>
 <body>
-    <h1> @<%= username %> welcome to Instagram</h1>
+    <h1> @<%= data.name %> welcome to Instagram</h1>
     <button>Follow</button>
     <button>Message</button>
-    <h3>Account thats follow you : </h3>
-    <ul>
-        <% for(let username of followers){ %>
-            <li><%=username%></li>
-            <% } %>
-    </ul>
+    <p>Followers : <%= data.followers %> &nbsp; &nbsp; &nbsp; &nbsp; Following : <%= data. following %></p>
+    <hr>
+    <% for(let post of data.posts){ %>
+        <img src="<%= post.image %>" alt="Imageee">
+        <p>Likes : <%= post.likes %> &nbsp; &nbsp; &nbsp; &nbsp; comments : <%= post. comments %></p>
+        <% } %>
+    
 </body>
 </html>

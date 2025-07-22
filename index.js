@@ -17,10 +17,19 @@ app.get("/roledice", (req, res) => {
      res.render("roleDice.ejs", {dicevalue});
 })
 
+// app.get("/ig/:username", (req, res) => {
+//     const followers = ["adam", "bob", "steve", "abc"];
+//     let {username} = req.params;
+//     res.render("instragram.ejs", {username, followers});
+// })
+
 app.get("/ig/:username", (req, res) => {
-    const followers = ["adam", "bob", "steve", "abc"];
-    let {username} = req.params;
-    res.render("instragram.ejs", {username, followers});
+    const {username} = req.params;
+    const instaData = require("./data.json");
+    const data = instaData[username];
+    console.log(data);
+    
+    res.render("instragram.ejs", {data});
 })
 
 app.listen(port, () => {
