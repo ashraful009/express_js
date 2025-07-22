@@ -9,5 +9,11 @@
     <h1> @<%= username %> welcome to Instagram</h1>
     <button>Follow</button>
     <button>Message</button>
+    <h3>Account thats follow you : </h3>
+    <ul>
+        <% for(let username of followers){ %>
+            <li><%=username%></li>
+            <% } %>
+    </ul>
 </body>
 </html>
