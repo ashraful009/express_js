@@ -12,9 +12,14 @@ app.get("/", (req, res) => {
 })
 
 app.get("/roledice", (req, res) => {
-    let dicevalue = Math.floor(Math.random() * 6) + 1;
+    let dicevalue = Math.floor(Math.random() * 10) + 1;
     // res.render("roleDice.ejs", {num: dicevalue});
      res.render("roleDice.ejs", {dicevalue});
+})
+
+app.get("/ig/:username", (req, res) => {
+    let {username} = req.params;
+    res.render("instragram.ejs", {username});
 })
 
 app.listen(port, () => {
